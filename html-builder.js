@@ -72,7 +72,7 @@ module.exports = function bundle(loads, opts) {
   }).join('\n');
 
   var stubDefines = loads.map(function (load) {
-    return "System\.register('" + load.name + "', [], false, function() {});";
+    return "$__System\.register('" + load.name + "', [], false, function() {});";
   }).join('\n');
 
   return new Promise(function (resolve, reject) {
